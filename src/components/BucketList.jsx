@@ -9,7 +9,23 @@ function BucketList() {
   const addBucketItem = (item) => {
 
     // TODO: Write logic to add the new bucket item to the bucket state variable
-    
+    console.log(
+      'File: BucketList.js ~ line 10 ~ addBucketItem ~ item',
+      item
+    );
+
+    // Check to see if the item text is empty
+    if (!item.text) {
+      return;
+    }
+
+    // Add the new bucket list item to the existing array of objects
+    const newBucket = [item, ...bucket];
+    console.log(newBucket);
+
+    // Call setBucket to update state with our new set of bucket list items
+    setBucket(newBucket);
+
   };
 
   // Function to mark bucket list item as complete
@@ -18,6 +34,10 @@ function BucketList() {
     let updatedBucket = bucket.map((item) => {
       
       // TODO: Write logic that marks an item as complete or incomplete when invoked
+      if (item.id === id) {
+        item.isComplete = !item.isComplete;
+      }
+      return item;
 
     });
 
@@ -30,6 +50,9 @@ function BucketList() {
 
 
     // TODO: Update the bucket state variable
+    const updatedBucket = [...bucket].filter((item) => item.id !== id);
+
+    setBucket(updatedBucket);
   };
 
   // Function to edit the bucket list item
