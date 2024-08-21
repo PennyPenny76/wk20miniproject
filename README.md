@@ -30,7 +30,7 @@ Open the directory from VS Code.
 
 for online user:
 1. simply open this link to use:
-https://65c503cab252ee36cbb91c95--calm-babka-22a32a.netlify.app/
+https://bucket-list-nzqw.onrender.com
 
 ## Usage
 
